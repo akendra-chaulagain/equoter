@@ -77,12 +77,12 @@
 
                   <div class="form-group col-md-6">
                     <label for="caption">salary <i class="reqr">*</i> (salary)</label>
-                    <input class="form-control {{ $errors->has('caption') ? 'has-error' : '' }}" type="number" id="caption" name="salary" placeholder="salary" value="{{old('caption')}}" required="required">
+                    <input class="form-control {{ $errors->has('caption') ? 'has-error' : '' }}" type="text" id="caption" name="salary" placeholder="salary" value="{{old('caption')}}" required="required">
                 </div>   
 
                   <div class="form-group col-md-6">
                     <label for="caption">Contract Time <i class="reqr">*</i> (Contract Time)</label>
-                    <input class="form-control {{ $errors->has('caption') ? 'has-error' : '' }}" type="number" id="caption" name="contract_time" placeholder="2 years" value="{{old('caption')}}" required="required">
+                    <input class="form-control {{ $errors->has('caption') ? 'has-error' : '' }}" type="text" id="caption" name="contract_time" placeholder="2 years" value="{{old('caption')}}" required="required">
                 </div>   
 
                 <div id="url_link_div" class="form-group col-md-10" style="display: none;">

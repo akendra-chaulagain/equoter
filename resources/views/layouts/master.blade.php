@@ -75,7 +75,7 @@
 
     <link rel="icon" type="image/x-icon" href="{{ '/uploads/icons/' . $global_setting->site_logo }}" />
 
-    <link rel="stylesheet" href="website/css/style.css">
+    <link rel="stylesheet" href="/website/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
@@ -144,19 +144,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/contact">Contact</a>
                         </li>
-
-
-
-
                     </ul>
 
-
-
-
-
-
-
-                    <Button><a href="post-resume.html">APPLY</a></Button>
+                    <Button><a href="/jobapply-form">APPLY</a></Button>
                 </div>
             </div>
         </nav>
@@ -173,62 +163,19 @@
 
 
 
-    <script>
-        $('.owl-testomonials').owlCarousel({
-            loop: true,
-            autoplay: true,
-            items: 1,
-            nav: false,
-            dots: true,
-            autoplayHoverPause: true,
-            animateOut: 'slideOutUp',
-            animateIn: 'slideInUp',
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 1
-                },
-                1000: {
-                    items: 1
-                }
-            }
-        })
-    </script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-    <script>
-        $('.client-slider').owlCarousel({
-            loop: true,
-            margin: 50,
-            nav: false,
-            dots: false,
-            autoplay: true,
-            autoplayTimeout: 2000,
-            autoplayHoverPause: false,
-            // animateOut: 'slideOutUp',
-            // animateIn: 'slideInUp'
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 6
-                }
-            }
-        })
-    </script>
-
-
-
-
-    <script src="/website/js/lightbox.js"></script>
-
-    <script src="https://www.google-analytics.com/analytics.js" async></script>
+    @if (Session::has('contact'))
+        <script>
+            Swal.fire(
+                'Thank You !',
+                "Form submitted sucessfully!!!",
+                'success'
+            )
+        </script>
+    @endif
 
 
 
