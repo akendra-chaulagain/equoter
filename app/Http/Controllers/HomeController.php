@@ -47,15 +47,7 @@ class HomeController extends Controller
             $services = null;
         }
 
-        // services
-        // if (Navigation::query()->where('nav_category', 'Home')->where('nav_name', 'LIKE', "%job-destination%")->where('page_type', 'Group')->latest()->first() != null) {
-        //     $about_id = Navigation::query()->where('nav_category', 'Home')->where('nav_name', 'LIKE', "%job-destination%")->where('page_type', 'Group')->latest()->first()->id;
-        //     $job_destination = Navigation::query()->where('parent_page_id', $about_id)->paginate(3);
-        //     $job_destination_heading = Navigation::find($about_id);
-
-        // } else {
-        //     $job_destination = null;
-        // }
+    
 
 
         if (Navigation::query()->where('nav_category', 'Home')->where('nav_name', 'LIKE', "%partner%")->where('page_type', 'Group')->latest()->first() != null) {
@@ -103,12 +95,14 @@ class HomeController extends Controller
         if (Navigation::query()->where('nav_category', 'Home')->where('nav_name', 'LIKE', "%message%")->where('page_type', 'Group')->latest()->first() != null) {
             $message_id = Navigation::query()->where('nav_category', 'Home')->where('nav_name', 'LIKE', "%message%")->where('page_type', 'Group')->latest()->first()->id;
             $message = Navigation::query()->where('parent_page_id', $message_id)->latest()->first();
+            // return $message;
         } else {
             $message = null;
         }
         if (Navigation::query()->where('nav_category', 'Home')->where('nav_name', 'LIKE', "%process%")->where('page_type', 'Group')->latest()->first() != null) {
             $process_id = Navigation::query()->where('nav_category', 'Home')->where('nav_name', 'LIKE', "%process%")->where('page_type', 'Group')->latest()->first()->id;
-            $process = Navigation::query()->where('parent_page_id', $process_id)->latest()->get();
+            $process = Navigation::query()->where('parent_page_id', $process_id)->orderBy('position', 'ASC')->get();
+            // return $process;
         } else {
             $process = null;
         }

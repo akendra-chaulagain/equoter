@@ -1,11 +1,3 @@
-{{--       
-@php
-
-$destination = App\Models\Navigation::find($slug_detail->id);
-
-@endphp --}}
-
-
 
 
 @extends('layouts.master')

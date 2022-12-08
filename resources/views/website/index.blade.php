@@ -6,9 +6,16 @@
  @section('content')
      @include('website.slider')
      @include('website.home-about')
+     @include('website.home-process')
+     @include('website.home-job_category')
+
+    
+
+
+     {{-- @include('website.home-about')
      @include('website.home-job_category')
 
      @include('website.home-job-destination')
      @include('website.testomonials')
-     @include('website.client')
+     @include('website.client') --}}
  @endsection
