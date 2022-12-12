@@ -25,9 +25,7 @@
         ->orderBy('position', 'ASC')
         ->get();
     
-    // jobs footer
-    $footer_jobs = App\Models\Navigation::find(2471)->childs;
-    $footer_company = App\Models\Navigation::find(2259)->childs;
+    $footer_parent = App\Models\Navigation::find(2259)->childs;
     
 @endphp
 
@@ -73,7 +71,8 @@
     <meta property="twitter:image"
         content="{{ $seo->banner_image ?? '/uploads/icons/' . $global_setting->site_logo }}">
 
-    <link rel="icon" type="image/x-icon" href="{{ '/uploads/icons/' . $global_setting->site_logo }}" />
+    <link rel="shortcut icon" href="{{ '/uploads/icons/' . $global_setting->favicon }}" type="image/png">
+
 
     <link rel="stylesheet" href="/website/css/style.css">
     {{-- <link rel="stylesheet" href="/website/js/main.js"> --}}
@@ -102,7 +101,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon">=</span>
+                    <span class="navbar-toggler-icon" style="display: flex;justify-content: center; ">=</span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -154,6 +153,82 @@
     </div>
 
     @yield('content')
+
+    <footer class="w-100 py-4 flex-shrink-0 ">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer1">
+                        <div>
+                            <img src="images/logo.png" alt="">
+                        </div>
+                        <div class="icons-area">
+                            <div class="row">
+                                <div class="icons col-3">
+                                    <a target="_blank" href="{{ $global_setting->facebook }}">
+                                        <i class="fa-brands fa-facebook" style="color: white"></i>
+                                    </a>
+
+                                </div>
+                                <div class="icons col-3">
+                                    <a target="_blank" href="{{ $global_setting->linkedin }}">
+                                        <i class="fa-brands fa-square-instagram" style="color: white"></i>
+
+                                    </a>
+                                </div>
+
+                                <div class="icons col-3">
+                                    <a target="_blank" href="{{ $global_setting->twitter }}">
+                                        <i class="fa-brands fa-twitter" style="color: white"></i>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer2">
+                        <h5 class="">QUICK-LINK</h5>
+                        <ul class="list-unstyled footer-menu">
+
+                            @foreach ($footer_parent as $footer_parent_item)
+                                <li><a href="/company/{{ $footer_parent_item->nav_name }}"><i
+                                            class="fa-solid fa-minus"></i>{{ $footer_parent_item->caption }}</a></li>
+                            @endforeach
+                            <li><a href="/contact"><i class="fa-solid fa-minus"></i>Contact</a></li>
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer3">
+                        <h5 class="">CONTACT US</h5>
+                        <ul class="list-unstyled text-muted">
+                            <li><a href="#"></a><i class="fa-solid fa-location-crosshairs"></i>
+                                {{ $global_setting->website_full_address }} {{ $global_setting->address_ne }}
+                            </li>
+                            <li><a href="#"></a><i
+                                    class="fa-solid fa-phone-volume"></i>:{{ $global_setting->phone }}
+                            </li>
+                            <li><a href=""></a><i
+                                    class="fa-solid fa-envelope-open"></i>{{ $global_setting->site_email }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="container">
+                        <div class="gooter_mp">
+                            {!! $global_setting->page_keyword !!}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
 

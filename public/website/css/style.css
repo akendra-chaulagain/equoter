@@ -80,7 +80,7 @@ button:focus:not(:focus-visible) {
 }
 .nav-item .nav-link {
     color: #000;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .nav-item .nav-link:hover {
@@ -423,6 +423,7 @@ footer {
     text-decoration: none;
     color: #fff;
     margin-left: 20px;
+    font-size: 15px;
 
 }
 
@@ -970,7 +971,11 @@ body,
 @media only screen and (max-width: 1200px) {
     .nav-item .nav-link {
         color: #000;
-        font-size: 10px;
+        font-size: 15px;
+}
+.slider_curosel_img img{
+    max-height: 300px;
+    min-height: 300px;
 }
 .navbar-collapse{
     margin-left: 10px;
@@ -979,10 +984,24 @@ body,
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
     .nav-item .nav-link {
-        color: #000;
-        font-size: 10px;
+color: #000;
+       
 }
+
+.slider_curosel_img img{
+    max-height: 200px;
+    min-height: 200px;
+}
+
+}
+
 @media only screen and (max-width: 768px) {
+ 
+
+
+    .processdural{
+margin-bottom: 20px;
+    }
     .card {
         height: auto;
     }
@@ -1027,7 +1046,20 @@ body,
         padding: 40px 0;
     }
 }
+
+
+@media only screen and (max-width: 768px) {
+.navbar-brand img{
+   max-height: 40px;
+   min-height: 40px;
 }
+
+}
+.dropdown-menu .dropdown-item{
+    font-size: 16px;
+}
+
+
 
 
 /*========================== folder Page ==========================*/
@@ -1182,4 +1214,29 @@ body,
 } 
 .video-item{
     margin-bottom: 30px;
+}
+
+.slider_curosel_img img{
+        max-height: 559px;
+    min-height: 630px;
+}
+
+@media only screen and (max-width: 1250px) {
+ .slider_curosel_img img{
+        max-height: 400px;
+    min-height: 400px;
+    object-fit:cover;
+}
+}
+
+@media only screen and (max-width: 768px) {
+ .slider_curosel_img img{
+        max-height: 300px;
+    min-height: 300px;
+    /* object-fit:cover; */
+}
+}
+
+.gooter_mp iframe{
+    height: 200px;
 }

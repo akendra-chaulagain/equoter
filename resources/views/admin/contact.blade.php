@@ -64,11 +64,10 @@
                 <div class="form-text-area ">
                     <h1>CONTACT INFO</h1>
 
-                    <h6><span><i class="fa-solid fa-location-dot"></i></span> Gongabu, Kathmandu, Nepal</h6>
-                    <h6><span><i class="fa-solid fa-phone-volume"></i></span> +977-1-4986469, +977-1-4986470</h6>
-                    <h6><span><i class="fa-solid fa-fax"></i></span> +977-1-4986473</h6>
-                    <h6><span><i class="fa-solid fa-envelope"></i></span> equator746@gmail.com</h6>
-                    <h6><span><i class="fa-solid fa-envelope"></i></span> equoharish@gmail.com</h6>
+                    <h6><span><i class="fa-solid fa-location-dot"></i></span>  {{ $global_setting->website_full_address }} {{ $global_setting->address_ne }}</h6>
+                    <h6><span><i class="fa-solid fa-phone-volume"></i></span> {{ $global_setting->phone }}</h6>
+                  
+                    <h6><span><i class="fa-solid fa-envelope"></i></span> {{ $global_setting->site_email }}</h6>
                 </div>
 
             </div>
@@ -77,8 +76,6 @@
         </form>
 
     </div>
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d226065.25663378907!2d85.326133!3d27.70896!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1659511346982!5m2!1sen!2snp"
-        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+   
+{!! $global_setting->page_keyword !!}
 @endsection
