@@ -18,13 +18,13 @@
                              <a href="">/</a>
                          </li>
                          <li>
-                             <a href="index.html">POST</a>
+                             <a href="#">{{ $parent_name->caption }}</a>
                          </li>
                          <li>
                              <a href="">/</a>
                          </li>
                          <li>
-                             <a href="index.html">LEGAL DOCUMENTS</a>
+                             <a href="#">LEGAL DOCUMENTS</a>
                          </li>
                      </ul>
                  </div>
