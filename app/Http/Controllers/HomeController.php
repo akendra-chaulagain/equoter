@@ -47,7 +47,7 @@ class HomeController extends Controller
             $services = null;
         }
 
-    
+
 
 
         if (Navigation::query()->where('nav_category', 'Home')->where('nav_name', 'LIKE', "%partner%")->where('page_type', 'Group')->latest()->first() != null) {
@@ -381,6 +381,20 @@ class HomeController extends Controller
             $normal = Navigation::find($subcategory_id);
             $member = $normal->childs;
             return view("website.member")->with(["partners" => $partners, "member" => $member, "normal" => $normal, 'jobs' => $jobs, 'menus' => $menus, 'sliders' => $sliders, 'about' => $About, 'global_setting' => $global_setting, 'slug_detail' => $slug_detail]);
+        } elseif ($subcategory_type == "Legal Document") {
+            //return "return to job else";
+            $normal = Navigation::find($subcategory_id);
+            $member = $normal->childs;
+            // return $member;
+
+            return view("website.all_leg_doc")->with(["partners" => $partners, "member" => $member, "normal" => $normal, 'jobs' => $jobs, 'menus' => $menus, 'sliders' => $sliders, 'about' => $About, 'global_setting' => $global_setting, 'slug_detail' => $slug_detail]);
+        } elseif ($subcategory_type == "Demand Letter") {
+            //return "return to job else";
+            $normal = Navigation::find($subcategory_id);
+            $member = $normal->childs;
+            // return $member;
+
+            return view("website.all_leg_doc")->with(["partners" => $partners, "member" => $member, "normal" => $normal, 'jobs' => $jobs, 'menus' => $menus, 'sliders' => $sliders, 'about' => $About, 'global_setting' => $global_setting, 'slug_detail' => $slug_detail]);
         } elseif ($subcategory_type == "Group") {
             //return "return to job else";
             return view("website.job-list")->with(["partners" => $partners, 'jobs' => $jobs, 'menus' => $menus, 'sliders' => $sliders, 'about' => $About, 'global_setting' => $global_setting, 'slug_detail' => $slug_detail]);

@@ -76,16 +76,15 @@
     <link rel="icon" type="image/x-icon" href="{{ '/uploads/icons/' . $global_setting->site_logo }}" />
 
     <link rel="stylesheet" href="/website/css/style.css">
+    {{-- <link rel="stylesheet" href="/website/js/main.js"> --}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    <link rel="stylesheet" href='https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css'>
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
 
@@ -98,7 +97,7 @@
     <div class="hearder">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="#"><img src="{{ '/uploads/icons/' . $global_setting->site_logo }}"
+                <a class="navbar-brand" href="/"><img src="{{ '/uploads/icons/' . $global_setting->site_logo }}"
                         alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -118,20 +117,22 @@
                         @foreach ($menus as $menu)
                             @php $submenus = $menu->childs; @endphp
                             <li class="nav-item dropdown" @if (isset($slug_detail) && $slug_detail->nav_name == $menu->nav_name)  @endif>
-                                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false"
-                                    @if ($submenus->count() > 0) href="{{ route('category', $menu->nav_name) }}" @else href="  
+
+                                @if ($menu->nav_name == 'documentation')
+                                    <a class="nav-link "
+                                        href="  
+                                    {{ route('category', $menu->nav_name) }}">{{ $menu->caption }}</a>
+                                @else
+                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                        @if ($submenus->count() > 0) href="{{ route('category', $menu->nav_name) }}" @else href="  
                                     {{ route('category', $menu->nav_name) }}" @endif>{{ $menu->caption }}</a>
-
-
-
-
+                                @endif
 
                                 @if ($submenus->count() > 0)
                                     <ul class="dropdown-menu">
                                         @foreach ($submenus as $sub)
                                             <li>
-
                                                 <a class="dropdown-item"
                                                     href="{{ route('subcategory', [$menu->nav_name, $sub->nav_name]) }}">{{ $sub->caption }}</a>
                                             </li>
@@ -155,6 +156,40 @@
     @yield('content')
 
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <!-- gllery js -->
+    <script src="https://www.peninsulanepal.com/template/web/js/gallery/picturefill.min.js"></script>
+    <script src="https://www.peninsulanepal.com/template/web/js/gallery/lightgallery.js"></script>
+    <script src="https://www.peninsulanepal.com/template/web/js/gallery/lg-pager.js"></script>
+    <script src="https://www.peninsulanepal.com/template/web/js/gallery/lg-autoplay.js"></script>
+    <script src="https://www.peninsulanepal.com/template/web/js/gallery/lg-fullscreen.js"></script>
+    <script src="https://www.peninsulanepal.com/template/web/js/gallery/lg-zoom.js"></script>
+    <script src="https://www.peninsulanepal.com/template/web/js/gallery/lg-hash.js"></script>
+    <script src="https://www.peninsulanepal.com/template/web/js/gallery/lg-share.js"></script>
+    <!--End gllery js -->
+
+
+    <script src="/website/js/main.js"></script>
+
+    <script>
+        lightGallery(document.getElementById('lightgallery'));
+
+        $(function() {
+            var selectedClass = "";
+            $(".filter").click(function() {
+                selectedClass = $(this).attr("data-rel");
+                $("#lightgallery").fadeTo(100, 0.1);
+                $("#lightgallery div").not("." + selectedClass).fadeOut().removeClass('animation');
+                setTimeout(function() {
+                    $("." + selectedClass).fadeIn().addClass('animation');
+                    $("#lightgallery").fadeTo(300, 1);
+                }, 300);
+            });
+        });
+    </script>
 
 
 

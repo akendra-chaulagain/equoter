@@ -1,62 +1,9 @@
- @extends('layouts.master')
+ {{-- @extends('layouts.master')
  @push('title')
      Gallery
  @endpush
  @section('content')
-     {{-- <section class="page-title"
-         style="background-image:   linear-gradient(
-                                  rgba(27, 40, 92, 0.7),
-                                  rgba(28, 35, 61, 0.7)
-                                ) ,url('https://images.pexels.com/photos/1181401/pexels-photo-1181401.jpeg?auto=compress&cs=tinysrgb&w=1600')">
-         <div class="auto-container">
-             <div class="title-box">
-                 <h1>Image Gallery</h1>
-             </div>
-             <ul class="page-breadcrumb">
-                 <li><a href="/">Home</a></li>
-                 <li>Image Gallery</li>
-             </ul>
-         </div>
-     </section>
-
-
-
-     <div class="folder-spacing">
-         <div class="container">
-             <div class="row">
-                
-
-                 @if (isset($photos))
-                     <div class="folder-spacing">
-                         <div class="container">
-                             <div class="row">
-                               
-                                 @foreach ($photos as $photo)
-                                     <div class="col-lg-3 col-md-6  col-12">
-                                         <a href="{{ route('galleryview', $photo->nav_name) }}">
-                                             <div class="folder">
-                                                 <div class="folder-inside"
-                                                     style="background: url({{ $photo->banner_image }}) no-repeat; background-size: cover;">
-                                                 </div>
-                                             </div>
-                                             <div class="folder_data">
-                                                 <a href="#">{{ $photo->caption }}</a>
-                                             </div>
-                                         </a>
-                                     </div>
-                                 @endforeach
-                                 
-                             </div>
-                         </div>
-                     </div>
-             </div>
-             @endif
-
-
-         </div>
-     </div> --}}
-
-
+     
 
 
      <section>
@@ -98,4 +45,70 @@
              @endif
          </div>
      </section>
+ @endsection --}}
+
+
+
+
+ @extends('layouts.master')
+ @push('title')
+     Gallery
+ @endpush
+ @section('content')
+     <div class="contact">
+         <div class="container">
+             <h1 class="contact-tittle3 text-center">GALLERY</h1>
+             <div class="contact-area text-center">
+                 <ul>
+                     <li>
+                         <a href="index.html">HOME</a>
+                     </li>
+                     <li>
+                         <a href="">/</a>
+                     </li>
+                     <li>
+                         <a href="index.html">GALLERY</a>
+                     </li>
+                 </ul>
+             </div>
+         </div>
+     </div>
+
+     <div class="container margin_60">
+         <section class="grid">
+
+          
+          
+    <main class="site-main">
+
+
+        <div class="gallery-folder">
+
+            <div class="container">
+                @if (isset($photos))
+                    <div class="row">
+                        @foreach ($photos as $photo)
+                            <div class="col-md-3 col-sm-4">
+
+                                <a href="{{ route('galleryview', $photo->nav_name) }}">
+                                    <div class="folder">
+                                        <div class="folder-inside"
+                                            style="background: url({{ $photo->banner_image }})  no-repeat; background-size: cover;">
+                                        </div>
+                                    </div>
+                                    <h4>{{ $photo->caption }}</h4>
+                                </a>
+                            </div>
+                        @endforeach
+
+                    </div>
+                @endif
+
+            </div>
+        </div>
+
+    </main>
+
+         </section>
+     </div>
  @endsection
