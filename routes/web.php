@@ -99,6 +99,11 @@ Route::get('gallery-view/{slug}',[HomeController::class,'GalleryView'])->name('g
 Route::get('inquiry',[ContactController::class,'inquiry'])->name('inquiry');
 Route::get('job-category',[HomeController::class,'allCategory'])->name('allCategory');
 Route::get('/all-jobs',[HomeController::class,'allJobs'])->name('allJobs');
+Route::get('/all_jobs', [HomeController::class, 'all_jobs'])->name('all_jobs');
+
+
+
+
 Route::get('read-more/{slug}',[HomeController::class,'ReadMore'])->name('readmore');
 
 Route::POST('jobapply/store/{slug}',[ContactController::class,'ContactStore'])->name('storeapply');

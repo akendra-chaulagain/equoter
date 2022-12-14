@@ -1,5 +1,3 @@
-
-
 @extends('layouts.master')
 @push('title')
     {{ $normal->caption }}
@@ -31,9 +29,10 @@
     <section class="about">
         <div class="container">
             <h1 class="about-tittle2 text-left">{!! $normal->short_content !!}</h1>
-            <div class="about-area">
-                <div class="row">
-                    @if ($normal->banner_image)
+
+            @if ($normal->banner_image)
+                <div class="about-area">
+                    <div class="row">
                         <div class="col-lg-6 col-md-12 col-12">
                             <div class="about-area-images">
                                 <img src="{{ $normal->banner_image }}" alt="">
@@ -48,20 +47,22 @@
                             </div>
 
                         </div>
-                    @else
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="about-area-text">
-                                <p>{!! $normal->short_content !!}
-                                </p>
-                                <p>{!! $normal->long_content !!}
-                                </p>
-                            </div>
+                    </div>
+                </div>
+            @else
+                <div class="col-lg-12 col-md-12 col-12">
 
-                        </div>
-                    @endif
+                    <p>{!! $normal->short_content !!}
+                    </p>
+                    <p>{!! $normal->long_content !!}
+                    </p>
+
 
                 </div>
-            </div>
+            @endif
+
+
+
 
         </div>
     </section>

@@ -12,7 +12,7 @@
                  <div class="contact-area text-center">
                      <ul>
                          <li>
-                             <a href="index.html">HOME</a>
+                             <a href="/">HOME</a>
                          </li>
                          <li>
                              <a href="">/</a>
@@ -38,7 +38,7 @@
                  <div id="lightgallery" class="list-unstyled">
                      @foreach ($member as $item)
                          <div class="item col-sm-4 col-xs-12 all 16" data-responsive="{{ $item->banner_image }}"
-                             data-src="{{ $item->banner_image }}" data-sub-html="<h4>Office</h4>">
+                             data-src="{{ $item->banner_image }}" data-sub-html="<h4{{ $item->caption }}</h4>">
                              <a href="">
                                  <img src="{{ $item->banner_image }}" alt="Office" />
                              </a>

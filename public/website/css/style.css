@@ -81,6 +81,12 @@ button:focus:not(:focus-visible) {
 .nav-item .nav-link {
     color: #000;
     font-size: 17px;
+    text-transform: uppercase;
+}
+
+.nav-item .dropdown-menu .dropdown-item {
+    text-transform: uppercase;
+    font-size: 14px;
 }
 
 .nav-item .nav-link:hover {
@@ -270,6 +276,7 @@ button:focus:not(:focus-visible) {
     /* margin-bottom: 50px; */
     /* max-height: 201px; */
     min-height: 138px;
+    margin-bottom: 27px;
 
 }
 
@@ -909,8 +916,7 @@ footer {
 .job-detaile-item {
     width: 100%;
     /* padding: 10px 0 10px 0; */
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px;
 
 }
 
@@ -1239,4 +1245,8 @@ margin-bottom: 20px;
 
 .gooter_mp iframe{
     height: 200px;
+}
+
+.chart_image img{
+  width: 100%;
 }

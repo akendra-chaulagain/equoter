@@ -117,7 +117,7 @@
                             @php $submenus = $menu->childs; @endphp
                             <li class="nav-item dropdown" @if (isset($slug_detail) && $slug_detail->nav_name == $menu->nav_name)  @endif>
 
-                                @if ($menu->nav_name == 'documentation')
+                                @if ($menu->nav_name == 'documentation' || $menu->nav_name == 'jobs')
                                     <a class="nav-link "
                                         href="  
                                     {{ route('category', $menu->nav_name) }}">{{ $menu->caption }}</a>
@@ -160,7 +160,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="footer1">
                         <div>
-                            <img src="images/logo.png" alt="">
+                            <img src="{{ '/uploads/icons/' . $global_setting->site_logo }}" alt="">
                         </div>
                         <div class="icons-area">
                             <div class="row">
