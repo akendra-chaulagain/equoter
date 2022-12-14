@@ -38,6 +38,7 @@
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-12">
                     <div class="job-detaile-area">
+
                         {{-- @foreach ($jobs as $job)
                             <div class="job-box">
                                 <div class="row">
@@ -61,8 +62,8 @@
                             </div>
                         @endforeach --}}
 
-
-                        @foreach ($all_job_childs as $home_job_cat_item)
+                        <div class="row">
+      @foreach ($all_job_childs as $home_job_cat_item)
                             <div class=" col-lg-4 col-md-6 col-12">
                                 <div class="card">
                                     <div class="row ">
@@ -86,6 +87,9 @@
                                 </div>
                             </div>
                         @endforeach
+                        </div>
+
+                  
 
 
 
