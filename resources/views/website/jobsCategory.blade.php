@@ -39,29 +39,7 @@
                 <div class="col-md-12 col-lg-12 col-12">
                     <div class="job-detaile-area">
 
-                        {{-- @foreach ($jobs as $job)
-                            <div class="job-box">
-                                <div class="row">
-                                    <div class="col-md-6 col-lg-6 col-12">
-                                        <div class="job-detaile-item">
-                                            <h5>{{ $job->caption }}</h5>
-                                            <h5>Company:{{ $job->getJob->company_name }}</h5>
-                                            <h5>Country: {{ $job->getJob->country }}</h5>
-                                            <h5>Business Services</h5>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6 col-lg-6 col-12">
-                                        <div class="job-detaile-item">
-                                            <h5>Salary: {{ $job->getJob->salary }}</h5>
-                                            <h5>Contract : {{ $job->getJob->contract_time }}</h5>
-                                            <button> <a href="/jobapply/{{ $job->nav_name }}">Apply NOW</a></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach --}}
-
+                       
                         <div class="row">
       @foreach ($all_job_childs as $home_job_cat_item)
                             <div class=" col-lg-4 col-md-6 col-12">
