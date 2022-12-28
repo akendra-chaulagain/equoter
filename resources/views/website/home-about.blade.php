@@ -6,7 +6,7 @@
 
 <section class="about">
     <div class="container">
-        <h1 class="about-tittle2 text-center">LEARN MORE <span>ABOUT US</span></h1>
+
         <div class="about-area">
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-12">
@@ -17,6 +17,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-12">
                     <div class="about-area-text">
+                        <h2 class="all_title_h2">ABOUT US</h2>
                         <p>
                             {!! Str::limit($home_about->long_content, 600) !!}
                         </p>
@@ -30,22 +31,21 @@
 
     </div>
 </section>
-<div class="work">
+<hr>
+
+<div class="message_from_chairman">
     <div class="container">
         <div class="row">
 
             <div class="col-md-12 col-lg-6 col-12">
                 <div class="work-text-area">
                     <div class="work-tittle">
-                        <h1><span>MESSAGE</span> FROM MD </h1>
+                      <h2 class="all_title_h2">MESSAGE FROM MD</h2>
                     </div>
 
                     <p> {!! $message->short_content !!}</p>
 
-                    {{-- <div class="thank"> Thanks,</div>
-
-                    <div class="name"> Harish Kunwar</div>
-                    <div class="post"> Managing Director</div> --}}
+                   
                 </div>
             </div>
 
@@ -57,3 +57,4 @@
     </div>
 
 </div>
+

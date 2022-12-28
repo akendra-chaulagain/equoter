@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,700&display=swap');
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
+   font-family: 'Source Sans Pro', sans-serif;
 }
 
 html {
@@ -78,36 +79,79 @@ button:focus:not(:focus-visible) {
     text-decoration: none;
     color: #fff;
 }
+.nav-item{
+    font-size: 17px !important;
+    padding: 0 1vh;
+    font-size: 2vh;
+    font-weight: 600;
+    border-radius: 6px;
+}
 .nav-item .nav-link {
     color: #000;
-    font-size: 17px;
+    font-size: 16px;
     text-transform: uppercase;
+    font-weight: 600;
 }
 
 .nav-item .dropdown-menu .dropdown-item {
     text-transform: uppercase;
     font-size: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid rgb(232, 232, 232);
+    padding: 8px 4px 8px 10px;
+}
+.nav-item .dropdown-menu .dropdown-item:hover{
+    color: #C74044;
+    background-color: white;
+}
+
+.dropdown-menu.show{
+    border: none;
 }
 
 .nav-item .nav-link:hover {
-    background-color: #555;
-    color: white;
+    /* background-color: #555; */
+    color: #C74044;
+    border-radius: 6px;
 }
 
-.nav-item {
-    font-size: 20px;
-    padding: 0 1vh;
-    font-size: 2vh;
+/* top navbar */
+
+.main_topbar {
+        background: #C74044;
+        color: white;
+        padding: 6px 0px 6px 0px;
 }
+.header_top_icon a{
+font-size: 20px;
+cursor: pointer;
+color: white;
+text-decoration: none;
+}
+.header_top_icon a:hover{
+color: white;
+}
+
+
+
+/* end top nav bar */
+
+
 
 /* ...................................................navbar csss end............................................................ */
 
 /* ...........................................start about css................................................ */
 .about {
+       width: 100%;
+    height: auto;
+    /* margin: 33px; */
+    padding: 40px 0px 20px 0px;
+
+}
+.counter{
     width: 100%;
     height: auto;
-
-
+    padding: 40px 0px 20px 0px;
 }
 
 .about-tittle2 {
@@ -115,6 +159,18 @@ button:focus:not(:focus-visible) {
     font-weight: 400px;
     padding-top: 40px;
     margin-left: 18px;
+}
+.about-area-text {
+    padding: 0px 0px 15px 0px !important;
+}
+.all_title_h2{
+        font-size: 35px;
+    color: #C74044;
+    font-weight: 700;
+}
+
+.processdural-tittle{
+    margin: 0px 0px 40px 0px;
 }
 
 .about-tittle2 span {
@@ -132,15 +188,16 @@ button:focus:not(:focus-visible) {
 }
 
 .about-area-images img {
-    width: 100%;
-    height: 400px;
-    object-fit: contain;
+       width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 6px;
 
 
 }
 
 .about-area-text p {
-    font-size: 15px;
+    font-size: 16px;
     text-align: justify;
 
 
@@ -157,11 +214,13 @@ button:focus:not(:focus-visible) {
 }
 
 .about-area-text button {
-    width: 25%;
+        width: 25%;
     height: 30px;
     border: 1px solid #C74044;
     background-color: #C74044;
-    border-radius: 30px;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: 17px;
 }
 
 .about-area-text button a {
@@ -175,6 +234,20 @@ button:focus:not(:focus-visible) {
 .work {
     background-color: #fff;
     width: 100%;
+}
+
+
+.message_from_chairman{
+     width: 100%;
+    height: auto;
+    /* margin: 33px; */
+    padding: 40px 0px 40px 0px;
+}
+.message_from_chairman img{
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
 }
 
 .work-tittle h1 {
@@ -191,9 +264,11 @@ button:focus:not(:focus-visible) {
 }
 
 .work-text-area p {
-    font-size: 15px;
+   font-size: 16px;
     color: #000;
     text-align: justify;
+    line-height: 33px;
+
 
 }
 
@@ -241,8 +316,9 @@ button:focus:not(:focus-visible) {
     color: #000;
 }
 
-/* ..............................................work css end................................................ */
-/* ................................................ start processdural csss................................................. */
+/* process */
+
+
 .counter {
     width: 100%;
     height: auto;

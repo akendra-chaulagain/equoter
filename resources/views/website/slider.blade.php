@@ -3,7 +3,7 @@
         @foreach ($sliders as $key => $sliders_item)
             <div class="carousel-item  @if ($key == 0) active
     @else @endif">
-                <img src="{{ $sliders_item->banner_image }}" class="d-block w-100" alt="...">
+                <img src="{{ $sliders_item->banner_image }}" class="d-block w-100" alt="slider_image">
             </div>
         @endforeach
 

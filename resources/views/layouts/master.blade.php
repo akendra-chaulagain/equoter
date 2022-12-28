@@ -1,6 +1,5 @@
 @php
     $global_setting = App\Models\GlobalSetting::all()->first();
-    
     $menus = App\Models\Navigation::query()
         ->where('nav_category', 'Main')
         ->where('page_type', '!=', 'Job')
@@ -15,23 +14,15 @@
     } elseif (isset($job)) {
         $seo = $job;
     }
-    
     $footer = App\Models\Navigation::query()
         ->where('nav_category', 'Main')
         ->where('parent_page_id', '!=', 0)
         ->where('page_type', '!=', 'Job')
-    
         // ->where('page_status', '1')
         ->orderBy('position', 'ASC')
         ->get();
-    
     $footer_parent = App\Models\Navigation::find(2259)->childs;
-    
 @endphp
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -90,6 +81,35 @@
 </head>
 
 <body>
+    {{-- main top bar --}}
+    <div class="main_topbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <i class="fa-solid fa-location-pin"></i>
+                    <span style="margin-left: 5px">Dhapasi-8, Basundhara, Kathnandu , Nepal</span>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <div class="header_top_icon">
+                        <a href="/">
+                            <i class="fa-brands fa-facebook" style="margin-right: 12px"></i>
+
+                        </a>
+                        <a href="/">
+                            <i class="fa-brands fa-instagram" style="margin-right: 12px"></i>
+
+                        </a>
+                        <a href="/">
+                            <i class="fa-brands fa-twitter"></i>
+
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 
 

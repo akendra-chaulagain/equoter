@@ -1,10 +1,10 @@
 @php
-     $slug_detail = app\Models\Navigation::find(2471)->childs->take(6);
+    $slug_detail = app\Models\Navigation::find(2471)->childs->take(6);
 @endphp
 
 <div class="jobs">
     <div class="container">
-        <h1 class="job-tittle text-center">JOBS & <span>UPDATE</span></h1>
+        <h1 class="all_title_h2  text-center">JOBS & UPDATE</h1>
         <div class="job-area">
             <div class="row">
                 @foreach ($slug_detail as $home_job_cat_item)
