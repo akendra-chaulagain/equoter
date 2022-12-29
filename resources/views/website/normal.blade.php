@@ -28,7 +28,7 @@
     </div>
     <section class="about">
         <div class="container">
-            <h1 class="about-tittle2 text-left">{!! $normal->short_content !!}</h1>
+            <h1 class="all_title_h2 text-left">{!! $normal->short_content !!}</h1>
 
             @if ($normal->banner_image)
                 <div class="about-area">

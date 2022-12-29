@@ -39,35 +39,30 @@
                 <div class="col-md-12 col-lg-12 col-12">
                     <div class="job-detaile-area">
 
-                       
+
                         <div class="row">
-      @foreach ($all_job_childs as $home_job_cat_item)
-                            <div class=" col-lg-4 col-md-6 col-12">
-                                <div class="card">
-                                    <div class="row ">
-                                        <div class="col-md-4">
-                                            <img src="{{ $home_job_cat_item->banner_image }}"
-                                                class="img-fluid rounded-start" alt="...">
+                            @foreach ($all_job_childs as $home_job_cat_item)
+                                <div class="col-lg-3 col-md-6 col-12">
+                                    <div class="card-sl">
+                                        <div class="card-image">
+                                            <img src="{{ $home_job_cat_item->banner_image }}" />
                                         </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title">{{ $home_job_cat_item->caption }}</h5>
-                                                <p class="card-text">
-                                                    {{ Str::limit($home_job_cat_item->short_content ?? '', 50) }}
-                                                </p>
-                                                <p class="card-text1"><small class="text-muted"><a
-                                                            href="/all_jobs/{{ $home_job_cat_item->nav_name }}">READ
-                                                            MORE
-                                                            >></a></small></p>
-                                            </div>
+                                        <div class="card-heading">
+                                            {{ $home_job_cat_item->caption }}
                                         </div>
+                                        <div class="card-text">
+                                            {{ Str::limit($home_job_cat_item->short_content, 100) }}
+                                        </div>
+
+
+                                        <a style="text-decoration: none" href="/job/{{ $home_job_cat_item->nav_name }}""
+                                            class="card-button"> Read More</a>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
                         </div>
 
-                  
+
 
 
 

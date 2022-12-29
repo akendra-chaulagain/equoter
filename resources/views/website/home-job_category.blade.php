@@ -1,5 +1,8 @@
-@php
-    $slug_detail = app\Models\Navigation::find(2471)->childs->take(6);
+
+
+
+                                                    @php
+    $slug_detail = app\Models\Navigation::find(2471)->childs->take(8);
 @endphp
 
 <div class="jobs">
@@ -8,26 +11,20 @@
         <div class="job-area">
             <div class="row">
                 @foreach ($slug_detail as $home_job_cat_item)
-                    <div class=" col-lg-4 col-md-6 col-12">
-                        <div class="card">
-                            <div class="row ">
-                                <div class="col-md-4">
-                                    <img src="{{ $home_job_cat_item->banner_image }}" class="img-fluid rounded-start"
-                                        alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $home_job_cat_item->caption }}</h5>
-                                        <p class="card-text">
-                                            {{ Str::limit($home_job_cat_item->short_content, 40) }}
-                                        </p>
-                                        <p class="card-text1"><small class="text-muted"><a
-                                                    href="/job/{{ $home_job_cat_item->nav_name }}">READ
-                                                    MORE
-                                                    >></a></small></p>
-                                    </div>
-                                </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="card-sl">
+                            <div class="card-image">
+                                <img src="{{ $home_job_cat_item->banner_image }}" />
                             </div>
+                            <div class="card-heading">
+                                {{ $home_job_cat_item->caption }}
+                            </div>
+                            <div class="card-text">
+                                {{ Str::limit($home_job_cat_item->short_content, 100) }}
+                            </div>
+                         
+
+                            <a style="text-decoration: none" href="/job/{{ $home_job_cat_item->nav_name }}"" class="card-button"> Read More</a>
                         </div>
                     </div>
                 @endforeach

@@ -87,22 +87,22 @@
             <div class="row">
                 <div class="col-6">
                     <i class="fa-solid fa-location-pin"></i>
-                    <span style="margin-left: 5px">Dhapasi-8, Basundhara, Kathnandu , Nepal</span>
+                    <span style="margin-left: 5px"> {{ $global_setting->website_full_address }} {{ $global_setting->address_ne }}</span>
                 </div>
                 <div class="col-6 d-flex justify-content-end">
                     <div class="header_top_icon">
-                        <a href="/">
+                        <a target="_blank" href="{{ $global_setting->facebook }}">
                             <i class="fa-brands fa-facebook" style="margin-right: 12px"></i>
 
                         </a>
-                        <a href="/">
+                        <a target="_blank" href="{{ $global_setting->linkedin }}">
                             <i class="fa-brands fa-instagram" style="margin-right: 12px"></i>
 
                         </a>
-                        <a href="/">
+                        <a target="_blank" href="{{ $global_setting->twitter }}">
                             <i class="fa-brands fa-twitter"></i>
-
                         </a>
+
                     </div>
 
                 </div>
@@ -186,7 +186,7 @@
                             <div class="row">
                                 <div class="icons col-3">
                                     <a target="_blank" href="{{ $global_setting->facebook }}">
-                                        <i class="fa-brands fa-facebook" style="color: white"></i>
+                                        <i  class="fa-brands fa-facebook" style="color: white"></i>
                                     </a>
 
                                 </div>
@@ -217,7 +217,7 @@
                                 <li><a href="/company/{{ $footer_parent_item->nav_name }}"><i
                                             class="fa-solid fa-minus"></i>{{ $footer_parent_item->caption }}</a></li>
                             @endforeach
-                            <li><a href="/contact"><i class="fa-solid fa-minus"></i>Contact</a></li>
+
 
 
                         </ul>
@@ -235,6 +235,11 @@
                             </li>
                             <li><a href=""></a><i
                                     class="fa-solid fa-envelope-open"></i>{{ $global_setting->site_email }}</li>
+
+
+
+
+
                         </ul>
                     </div>
                 </div>
