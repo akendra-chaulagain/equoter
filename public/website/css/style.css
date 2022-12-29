@@ -1315,8 +1315,8 @@ margin-bottom: 20px;
 }
 
 .slider_curosel_img img{
-        max-height: 559px;
-    min-height: 630px;
+         max-height: 613px;
+    min-height: 700px;
     object-fit: cover;
 }
 
