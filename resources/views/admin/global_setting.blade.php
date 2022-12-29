@@ -41,7 +41,7 @@
                         placeholder="Site Contact Number" value="{{ $global_setting->phone }}">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="phone_ne">Site Contact Nepali</label>
+                    <label for="phone_ne">Registration Number</label>
                     <input type="text" id="phone_ne" name="phone_ne" class="form-control"
                         placeholder="Site Contact Number Nepali" value="{{ $global_setting->phone_ne }}">
                 </div>

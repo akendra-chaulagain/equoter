@@ -86,8 +86,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <i class="fa-solid fa-location-pin"></i>
-                    <span style="margin-left: 5px"> {{ $global_setting->website_full_address }} {{ $global_setting->address_ne }}</span>
+                    {{-- <i class="fa-solid fa-location-pin"></i> --}}
+                    <span style="margin-left: 5px"> {{ $global_setting->phone_ne }} </span>
                 </div>
                 <div class="col-6 d-flex justify-content-end">
                     <div class="header_top_icon">
