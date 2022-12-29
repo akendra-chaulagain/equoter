@@ -1317,6 +1317,7 @@ margin-bottom: 20px;
 .slider_curosel_img img{
         max-height: 559px;
     min-height: 630px;
+    object-fit: cover;
 }
 
 @media only screen and (max-width: 1250px) {
