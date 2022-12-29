@@ -17,10 +17,11 @@
                                 <img src="{{ $home_job_cat_item->banner_image }}" />
                             </div>
                             <div class="card-heading">
-                                {{ $home_job_cat_item->caption }}
+                                {{-- {{ $home_job_cat_item->caption }} --}}
+                                 {{ Str::limit($home_job_cat_item->caption, 23) }}
                             </div>
                             <div class="card-text">
-                                {{ Str::limit($home_job_cat_item->short_content, 100) }}
+                                {!! Str::limit($home_job_cat_item->short_content, 100) !!}
                             </div>
                          
 
